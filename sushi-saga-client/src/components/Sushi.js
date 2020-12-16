@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
 
-const Sushi = ({sushi}) => {
+const Sushi = ({sushi, sushiClick, sushisEaten}) => {
   console.log(sushi)
   return (
     <div className="sushi">
       <div className="plate" 
-           onClick={/* Give me a callback! */ null}>
+           onClick={() => sushiClick(sushi)}>
         { 
           /* Tell me if this sushi has been eaten! */ 
-          false ?
+          sushisEaten.includes(sushi) ?
             null
           :
             <img src={sushi.img_url} width="100%" />
